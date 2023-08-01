@@ -13,6 +13,7 @@ public class Borrower {
     }
 
 
-
-
+    public void borrowBook(Book book) {
+        this.collection.add(book);
+    }
 }
