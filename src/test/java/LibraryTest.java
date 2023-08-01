@@ -10,9 +10,8 @@ public class LibraryTest {
 
      @Before
     public void before() {
-//         book1 = new Book("Harry Potter And The Order of The Phoenix", "JK Rowling", "Childrens");
-//         book2 = new Book("Incognito: The Secret Lives of The Brain", "David Eagleman", "Science");
-         library = new Library();
+//
+         library = new Library(1);
      }
 
      @Test
@@ -26,6 +25,15 @@ public class LibraryTest {
          library.addBook(book1);
          assertEquals(1, library.countStock());
 
+     }
+
+     @Test
+    public void cannotAddBookWhenAtCapacity () {
+         Book book1 = new Book("Harry Potter And The Order of The Phoenix", "JK Rowling", "Childrens");
+         Book book2 = new Book("Incognito: The Secret Lives of The Brain", "David Eagleman", "Science");
+         library.addBook(book1);
+         library.addBook(book2);
+         assertEquals(1, library.countStock());
      }
 
 
