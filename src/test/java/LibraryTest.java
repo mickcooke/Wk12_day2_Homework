@@ -29,13 +29,20 @@ public class LibraryTest {
 
      @Test
     public void cannotAddBookWhenAtCapacity () {
-         Book book1 = new Book("Harry Potter And The Order of The Phoenix", "JK Rowling", "Childrens");
+         Book book = new Book("Harry Potter And The Order of The Phoenix", "JK Rowling", "Childrens");
          Book book2 = new Book("Incognito: The Secret Lives of The Brain", "David Eagleman", "Science");
-         library.addBook(book1);
+         library.addBook(book);
          library.addBook(book2);
          assertEquals(1, library.countStock());
      }
 
+    @Test
+    public void canRemoveBook() {
+        Book book = new Book("Harry Potter And The Order of The Phoenix", "JK Rowling", "Childrens");
+        library.addBook(book);
+        library.removeBook(book);
+        assertEquals(0, library.countStock());
 
+    }
 
 }
